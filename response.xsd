@@ -126,8 +126,8 @@
                             <xs:element name="description" type="xs:string"/>
                             <xs:element name="contact-email" type="ewp:Email"/>
                             <xs:element name="contact-name" type="xs:string" minOccurs="0"/>
-                            <xs:element name="phone-number" type="p:PhoneNumber" minOccurs="0"/>
                             <xs:element name="info-url" type="ewp:HTTP" minOccurs="0"/>
+                            <xs:element name="phone-number" type="p:PhoneNumber" minOccurs="0"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
@@ -264,6 +264,61 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
+                <xs:element name="student-association" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="type">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="political"/>
+                                        <xs:enumeration value="topical"/>
+                                        <xs:enumeration value="other"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="contact-email" type="ewp:Email"/>
+                            <xs:element name="info-url" type="ewp:HTTP" minOccurs="0"/>
+                            <xs:element name="phone-number" type="p:PhoneNumber" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="language-learning" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="available-language" type="xs:language" maxOccurs="unbounded"/>
+                            <xs:element name="info-url" type="ewp:HTTP"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="alumni" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="contact-email" type="ewp:Email"/>
+                            <xs:element name="contact-name" type="xs:string" minOccurs="0"/>
+                            <xs:element name="info-url" type="ewp:HTTP" minOccurs="0"/>
+                            <xs:element name="phone-number" type="p:PhoneNumber" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="volunteering-and-opportunities" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string"/>
+                            <xs:element name="organizational-unit-name" type="xs:string"/>
+                            <xs:element name="provider-name" type="xs:string"/>
+                            <xs:element name="contact-email" type="ewp:Email"/>
+                            <xs:element name="info-url" type="ewp:HTTP" minOccurs="0"/>
+                            <xs:element name="phone-number" type="p:PhoneNumber" minOccurs="0"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="sport-for-ects-url" type="ewp:HTTP" minOccurs="0"/>
+                <xs:element name="career-and-jobs-url" type="ewp:HTTP" minOccurs="0"/>
+                <xs:element name="it-services-url" type="ewp:HTTP" minOccurs="0"/>
+                <xs:element name="inclusion-info-url" type="ewp:HTTP" minOccurs="0"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
